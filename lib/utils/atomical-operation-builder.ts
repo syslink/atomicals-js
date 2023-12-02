@@ -897,7 +897,7 @@ export class AtomicalOperationBuilder {
     */
     addCommitChangeOutputIfRequired(extraInputValue: number, fee: FeeCalculations, pbst: any, address: string) {
         const totalInputsValue = extraInputValue + this.getTotalAdditionalInputValues();
-        const totalOutputsValue = this.getTotalAdditionalOutputValues() + fee.revealFeePlusOutputs;
+        const totalOutputsValue = fee.revealFeePlusOutputs;
         const calculatedFee = totalInputsValue - totalOutputsValue;
         // It will be invalid, but at least we know we don't need to add change
         if (calculatedFee <= 0) {
